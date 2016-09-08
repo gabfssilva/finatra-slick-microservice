@@ -3,6 +3,8 @@ package org.thedevpiece.finatra.slick.microservices.domain
 import com.google.inject.{ Inject, Singleton }
 import slick.driver.JdbcProfile
 
+import scala.concurrent.ExecutionContext.Implicits.global
+
 import scala.concurrent.Future
 
 @Singleton
@@ -27,14 +29,11 @@ class UserRepository @Inject() (val driver: JdbcProfile) {
     db.run(query)
   }
 
-  def create(user: (Option[Long], String, Int, String)): Future[Seq[Long]] = {
+  def create(user: (Option[Long], String, Int, String)): Future[Option[Long]] = {
     val action: DBIO[Seq[Long]] = (users returning users.map(_.id)) ++= List(user)
-    db.run(action)
+    db.run(action).map({
+      case Nil => None
+      case x +: Nil => Some(x)
+    })
   }
-
-  val insertActions = DBIO.seq(
-    users.schema.create
-  )
-
-  val setupFuture = db.run(insertActions)
 }
