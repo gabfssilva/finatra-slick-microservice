@@ -1,0 +1,72 @@
+apply plugin: 'scala'
+apply plugin: 'gradle-one-jar'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
+repositories {
+    jcenter()
+
+
+    maven {
+        url "https://maven.twttr.com"
+    }
+}
+
+jar.archiveName = "finatra-slick-microservice-nolibs.jar"
+
+task uberJar(type: OneJar) {
+    mainClass = 'org.thedevpiece.finatra.slick.microservices.ApplicationHttpServerMain'
+    archiveName = 'finatra-slick-microservice.jar'
+}
+
+final scalaVersion = "_2.11"
+
+final finatra = "2.1.4"
+final slick = "3.1.1"
+final scalaAsync = "0.9.5"
+final twitterBijection = "0.9.2"
+final logback = "0.9.28"
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.11.8'
+
+    compile "com.twitter.finatra:finatra-http$scalaVersion:$finatra"
+    compile "com.twitter.finatra:finatra-slf4j$scalaVersion:$finatra"
+    compile "com.twitter.finatra:finatra-jackson$scalaVersion:$finatra"
+
+    compile "com.twitter.inject:inject-server$scalaVersion:$finatra"
+    compile "com.twitter.inject:inject-app$scalaVersion:$finatra"
+    compile "com.twitter.inject:inject-modules$scalaVersion:$finatra"
+
+    compile "com.typesafe.slick:slick$scalaVersion:$slick"
+
+    compile "com.h2database:h2:1.4.181"
+
+    compile "org.scala-lang.modules:scala-async$scalaVersion:$scalaAsync"
+    compile "org.scala-lang.modules:scala-async$scalaVersion:$scalaAsync"
+
+    compile "com.twitter:bijection-util$scalaVersion:$twitterBijection"
+    compile "com.twitter:bijection-core$scalaVersion:$twitterBijection"
+
+    compile "ch.qos.logback:logback-classic:$logback"
+
+    testCompile "com.twitter.finatra:finatra-http$scalaVersion:$finatra:tests"
+    testCompile "com.twitter.finatra:finatra-slf4j$scalaVersion:$finatra:tests"
+    testCompile "com.twitter.finatra:finatra-jackson$scalaVersion:$finatra:tests"
+    testCompile "com.twitter.inject:inject-server$scalaVersion:$finatra:tests"
+    testCompile "com.twitter.inject:inject-app$scalaVersion:$finatra:tests"
+    testCompile "com.twitter.inject:inject-core$scalaVersion:$finatra:tests"
+    testCompile "com.twitter.inject:inject-modules$scalaVersion:$finatra:tests"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.scalatest:scalatest$scalaVersion:2.2.6"
+    testCompile "org.specs2:specs2$scalaVersion:2.3.12"
+    testCompile "com.google.inject.extensions:guice-testlib:4.1.0"
+}

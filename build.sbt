@@ -19,7 +19,6 @@ assemblyJarName in assembly := s"${name.value}.jar"
 lazy val versions = new {
   val finatra = "2.1.4"
   val slick = "3.1.1"
-  val quill = "0.9.0"
 }
 
 libraryDependencies ++= Seq(
