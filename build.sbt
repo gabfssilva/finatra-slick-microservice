@@ -22,13 +22,13 @@ lazy val versions = new {
 }
 
 libraryDependencies ++= Seq(
-  "com.twitter.finatra" %% "finatra-http" % versions.finatra,
-  "com.twitter.finatra" %% "finatra-slf4j" % versions.finatra,
-  "com.twitter.finatra" %% "finatra-jackson" % versions.finatra,
+  "com.twitter" %% "finatra-http" % versions.finatra,
+  "com.twitter" %% "finatra-slf4j" % versions.finatra,
+  "com.twitter" %% "finatra-jackson" % versions.finatra,
 
-  "com.twitter.inject" %% "inject-server" % versions.finatra,
-  "com.twitter.inject" %% "inject-app" % versions.finatra,
-  "com.twitter.inject" %% "inject-modules" % versions.finatra,
+  "com.twitter" %% "inject-server" % versions.finatra,
+  "com.twitter" %% "inject-app" % versions.finatra,
+  "com.twitter" %% "inject-modules" % versions.finatra,
 
   "com.typesafe.slick" %% "slick" % versions.slick,
 
@@ -44,30 +44,30 @@ libraryDependencies ++= Seq(
 
   "ch.qos.logback" % "logback-classic" % "0.9.28",
 
-  "com.twitter.finatra" %% "finatra-http" % versions.finatra % "test",
-  "com.twitter.finatra" %% "finatra-jackson" % versions.finatra % "test",
+  "com.twitter" %% "finatra-http" % versions.finatra % "test",
+  "com.twitter" %% "finatra-jackson" % versions.finatra % "test",
 
-  "com.twitter.inject" %% "inject-server" % versions.finatra % "test",
-  "com.twitter.inject" %% "inject-app" % versions.finatra % "test",
-  "com.twitter.inject" %% "inject-modules" % versions.finatra % "test",
+  "com.twitter" %% "inject-server" % versions.finatra % "test",
+  "com.twitter" %% "inject-app" % versions.finatra % "test",
+  "com.twitter" %% "inject-modules" % versions.finatra % "test",
 
-  "com.twitter.finatra" %% "finatra-http" % versions.finatra % "test" classifier "tests",
-  "com.twitter.finatra" %% "finatra-jackson" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-server" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-app" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-core" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-modules" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "finatra-http" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "finatra-jackson" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-server" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-app" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-core" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-modules" % versions.finatra % "test" classifier "tests",
 
   //Test dependencies for finatra
-  "com.twitter.finatra" %% "finatra-http" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-core" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-core" % versions.finatra % "test",
-  "com.twitter.inject" %% "inject-modules" % versions.finatra % "test",
-  "com.twitter.inject" %% "inject-modules" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-app" % versions.finatra % "test",
-  "com.twitter.inject" %% "inject-app" % versions.finatra % "test" classifier "tests",
-  "com.twitter.inject" %% "inject-server" % versions.finatra % "test",
-  "com.twitter.inject" %% "inject-server" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "finatra-http" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-core" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-core" % versions.finatra % "test",
+  "com.twitter" %% "inject-modules" % versions.finatra % "test",
+  "com.twitter" %% "inject-modules" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-app" % versions.finatra % "test",
+  "com.twitter" %% "inject-app" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-server" % versions.finatra % "test",
+  "com.twitter" %% "inject-server" % versions.finatra % "test" classifier "tests",
 
   "com.google.inject.extensions" % "guice-testlib" % "4.1.0" % "test",
   "org.scalatest" %% "scalatest" % "2.2.6" % "test",

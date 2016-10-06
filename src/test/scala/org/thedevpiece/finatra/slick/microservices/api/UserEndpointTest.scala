@@ -1,7 +1,7 @@
 package org.thedevpiece.finatra.slick.microservices.api
 
 import com.twitter.finagle.http.Status
-import com.twitter.finatra.http.test.EmbeddedHttpServer
+import com.twitter.finatra.http.EmbeddedHttpServer
 import com.twitter.inject.server.FeatureTest
 import org.thedevpiece.finatra.slick.microservices.ApplicationHttpServer
 import org.thedevpiece.finatra.slick.microservices.domain.UserRepository
