@@ -17,7 +17,7 @@ assemblyMergeStrategy in assembly := {
 assemblyJarName in assembly := s"${name.value}.jar"
 
 lazy val versions = new {
-  val finatra = "2.1.4"
+  val finatra = "2.4.0"
   val slick = "3.1.1"
 }
 
