@@ -28,7 +28,7 @@ task uberJar(type: OneJar) {
 
 final scalaVersion = "_2.11"
 
-final finatra = "2.4.0"
+final finatra = "2.5.0"
 final slick = "3.1.1"
 final scalaAsync = "0.9.5"
 final twitterBijection = "0.9.2"
