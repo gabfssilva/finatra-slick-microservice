@@ -19,6 +19,7 @@ class UserEndpointTest extends FeatureTest {
 
     import driver.api._
 
+    //creating the schema of the table users
     val insertActions = DBIO.seq(
       repository.users.schema.create
     )

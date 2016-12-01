@@ -17,7 +17,7 @@ assemblyMergeStrategy in assembly := {
 assemblyJarName in assembly := s"${name.value}.jar"
 
 lazy val versions = new {
-  val finatra = "2.5.0"
+  val finatra = "2.6.0"
   val slick = "3.1.1"
 }
 
@@ -70,7 +70,7 @@ libraryDependencies ++= Seq(
   "com.twitter" %% "inject-server" % versions.finatra % "test" classifier "tests",
 
   "com.google.inject.extensions" % "guice-testlib" % "4.1.0" % "test",
-  "org.scalatest" %% "scalatest" % "2.2.6" % "test",
+  "org.scalatest" %% "scalatest" % "3.0.0" % "test",
   "org.specs2" %% "specs2" % "2.3.12" % "test",
   "junit" % "junit" % "4.12" % "test"
 )

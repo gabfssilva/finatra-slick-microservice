@@ -28,7 +28,7 @@ task uberJar(type: OneJar) {
 
 final scalaVersion = "_2.11"
 
-final finatra = "2.5.0"
+final finatra = "2.6.0"
 final slick = "3.1.1"
 final scalaAsync = "0.9.5"
 final twitterBijection = "0.9.2"
@@ -66,7 +66,7 @@ dependencies {
     testCompile "com.twitter:inject-modules$scalaVersion:$finatra:tests"
 
     testCompile 'junit:junit:4.12'
-    testCompile "org.scalatest:scalatest$scalaVersion:2.2.6"
+    testCompile "org.scalatest:scalatest$scalaVersion:3.0.0"
     testCompile "org.specs2:specs2$scalaVersion:2.3.12"
     testCompile "com.google.inject.extensions:guice-testlib:4.1.0"
 }
